@@ -2,6 +2,7 @@ package com.stackroute;
 
 import com.stackroute.config.AppConfig;
 import com.stackroute.domain.Movie;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main
@@ -14,6 +15,7 @@ public class Main
         context.refresh();
         Movie movie=context.getBean("movie", Movie.class);
         System.out.println(movie);
+
 
     }
 }

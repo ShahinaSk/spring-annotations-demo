@@ -5,11 +5,12 @@ import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class SpringBeanConfiguration {
 
-    @Bean(name ="movie")
+    @Bean(name = "movie")
     public Movie getMovie(){
         Movie movie=new Movie();
         movie.setMovieId(101);
@@ -24,6 +25,5 @@ public class SpringBeanConfiguration {
         actor.setAge(30);
         return actor;
     }
-
 
 }

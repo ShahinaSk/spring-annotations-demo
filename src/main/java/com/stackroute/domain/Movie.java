@@ -1,10 +1,18 @@
 package com.stackroute.domain;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Movie {
+public class Movie implements ApplicationContextAware, BeanNameAware, BeanFactoryAware {
+
 
     private int movieId;
     private String movieName;
@@ -39,5 +47,20 @@ public class Movie {
                 "movieId=" + movieId +
                 ", movieName='" + movieName + '\''+", " + actor +
                 '}';
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        System.out.println("Inside setApplicationContext");
+    }
+
+    @Override
+    public void setBeanName(String s) {
+        System.out.println("Bean name is: "+s);
+    }
+
+    @Override
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        System.out.println("BeanFactory is: "+beanFactory);
     }
 }
