@@ -1,6 +1,7 @@
 package com.stackroute.config;
 
 
+import com.stackroute.demo.BeanLifeCycleDemoBean;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.context.annotation.Bean;
@@ -24,6 +25,10 @@ public class SpringBeanConfiguration {
         actor.setGender("Male");
         actor.setAge(30);
         return actor;
+    }
+    @Bean(name = "beanlifecycledemobean",initMethod = "customInit",destroyMethod = "customDestroy")
+    public BeanLifeCycleDemoBean getBeanLifeCycleDemoBean(){
+        return new BeanLifeCycleDemoBean();
     }
 
 }
