@@ -12,13 +12,22 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class SpringBeanConfiguration {
 
-    @Bean(name = "movie")
-    public Movie getMovie(){
+    @Bean(name = "movie1")
+    public Movie getMovie1(){
         Movie movie=new Movie();
         movie.setMovieId(101);
         movie.setMovieName("Kalank");
         return movie;
     }
+
+    @Bean(name = "movie2")
+    public Movie getMovie2(){
+        Movie movie=new Movie();
+        movie.setMovieId(102);
+        movie.setMovieName("SOTY");
+        return movie;
+    }
+
     @Bean(name = "actor")
     public Actor getActor(){
         Actor actor=new Actor();
