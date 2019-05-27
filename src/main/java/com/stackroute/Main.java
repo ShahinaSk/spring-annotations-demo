@@ -14,8 +14,7 @@ public class Main
         context.register(AppConfig.class);
         context.refresh();
         Movie movie1=context.getBean("movie1", Movie.class);
-        Movie movie2=context.getBean("movie2",Movie.class);
-        System.out.println(movie1==movie2);
-
+        System.out.println(movie1);
+        context.close();
     }
 }

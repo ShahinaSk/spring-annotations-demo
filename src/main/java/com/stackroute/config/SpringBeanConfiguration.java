@@ -20,14 +20,6 @@ public class SpringBeanConfiguration {
         return movie;
     }
 
-    @Bean(name = "movie2")
-    public Movie getMovie2(){
-        Movie movie=new Movie();
-        movie.setMovieId(102);
-        movie.setMovieName("SOTY");
-        return movie;
-    }
-
     @Bean(name = "actor")
     public Actor getActor(){
         Actor actor=new Actor();

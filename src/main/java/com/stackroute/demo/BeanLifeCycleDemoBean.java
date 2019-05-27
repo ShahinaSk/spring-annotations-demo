@@ -6,20 +6,20 @@ import org.springframework.beans.factory.InitializingBean;
 public class BeanLifeCycleDemoBean implements InitializingBean, DisposableBean {
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("Inside BeanLifeCycleDemoBean:afterPropertiesSet()");
+        System.out.println("Inside BeanLifeCycleDemoBean: afterPropertiesSet()");
 
     }
 
     public void customInit(){
-        System.out.println("Inside customInit()");
+        System.out.println("Inside BeanLifeCycleDemoBean: customInit()");
     }
 
     public void customDestroy(){
-        System.out.println("Inside customDestroy()");
+        System.out.println("Inside BeanLifeCycleDemoBean:  customDestroy()");
     }
 
     @Override
     public void destroy() throws Exception {
-        System.out.println("Inside BeanLifeCycleDemoBean:destroy()");
+        System.out.println("Inside BeanLifeCycleDemoBean: destroy()");
     }
 }
