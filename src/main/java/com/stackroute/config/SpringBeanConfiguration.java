@@ -11,12 +11,19 @@ public class SpringBeanConfiguration {
 
     @Bean(name ="movie")
     public Movie getMovie(){
-
-        return new Movie(101,"Pokiri");
+        Movie movie=new Movie();
+        movie.setMovieId(101);
+        movie.setMovieName("Kalank");
+        return movie;
     }
     @Bean(name = "actor")
     public Actor getActor(){
-        return new Actor("Mahesh","Male",38);
+        Actor actor=new Actor();
+        actor.setName("Varun");
+        actor.setGender("Male");
+        actor.setAge(30);
+        return actor;
     }
+
 
 }
